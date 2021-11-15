@@ -2,5 +2,7 @@
 #include <stdio.h>
 
 int main(){
-	printf("Bem-vindo ao nosso jogo de adivinhação!");
+	printf("*******************************************\n");
+	printf("* Bem-vindo ao nosso jogo de adivinhação! *\n");
+	printf("*******************************************\n");
 }
