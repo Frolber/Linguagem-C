@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <locale.h>
+#include <unistd.h>
 
 int main(){
 
@@ -18,4 +19,5 @@ int main(){
 	printf("Tu sabe qual é o número que o jogo pensou?");
 	scanf("%d", &chute);
 	printf("Então tu acha que o número que jogo tem guardado é %d?\n", chute);
+	system("pause");
 }
