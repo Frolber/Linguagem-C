@@ -17,5 +17,5 @@ int main(){
 
 	printf("Tu sabe qual é o número que o jogo pensou?");
 	scanf("%d", &chute);
-	printf("Então tu acha que o número que jogo tem guardado é %d?", chute);
+	printf("Então tu acha que o número que jogo tem guardado é %d?\n", chute);
 }
