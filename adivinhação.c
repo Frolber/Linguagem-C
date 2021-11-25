@@ -18,7 +18,7 @@ int main(){
 
 	//Esse for é loop para que o jogador tenha só três chances para acertar o número secreto:
 	for(int i = 1; i <=3; i++){
-		printf("Sua %d tentativa no momento", i);
+		printf("Sua %d tentativa de 3 no momento\n", i);
 		printf("Tu sabe qual é o número que o jogo pensou?");
 		scanf("%d", &chute);
 		printf("Então tu acha que o número que jogo tem guardado é %d?\n", chute);
