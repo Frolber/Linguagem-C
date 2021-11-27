@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <locale.h>
 #include <unistd.h>
@@ -18,11 +17,22 @@ int main(){
 
 	int chute;
 
-	//Esse for é loop para que o jogador tenha só três chances para acertar o número secreto:
+	//Esse for é loop para que o jogador tenha só X chances para acertar o número secreto:
 	for(int i = 1; i <=NUMEROS_DE_TENTATIVAS; i++){
 		printf("Sua %d tentativa de %d no momento\n", i, NUMEROS_DE_TENTATIVAS);
 		printf("Tu sabe qual é o número que o jogo pensou?");
 		scanf("%d", &chute);
+
+		//Quando o jogador tentar colocar número negativo:
+
+		if (chute < 0){
+			printf("Amigue, tudo não pode chutar com números negativos.\n");
+			i--;
+			continue;
+		}
+
+		//Continuação do loop:
+
 		printf("Então tu acha que o número que jogo tem guardado é %d?\n", chute);
 		system("pause");
 		printf("Vou ver ser é verdade...\n");
@@ -31,6 +41,8 @@ int main(){
 		//Verificação se o jogador adivinhou o número secreto:
 
 		int acertou = (chute == numerosecreto);
+		int chutemaior = (chute > numerosecreto);
+		int chutemenor = (chute < numerosecreto);
 
 		if(acertou){
 			printf("Parabéns!! Tu acertou o número que o jogo pensou!\n");
@@ -41,15 +53,12 @@ int main(){
 			printf("Hmmm... Você errou o número que jogo pensou...\n");
 			printf("Mas não desanime. Tente de novo!\n");
 
-			int chutemaior = (chute > numerosecreto);
-
+		
 			if (chutemaior){
 				printf("Dica: o seu chute foi maior que o número pensado pelo jogo.\n");
 			}
 
-			int chutemenor = (chute < numerosecreto);
-
-			if (chutemenor){
+			else if (chutemenor){
 				printf("Dica: o seu chute foi menor que o número pensado pelo jogo.\n");
 			}		
 		}
