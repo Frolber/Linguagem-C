@@ -2,8 +2,6 @@
 #include <locale.h>
 #include <unistd.h>
 
-#define NUMEROS_DE_TENTATIVAS 5
-
 int main(){
 
 	setlocale(LC_ALL, "");
@@ -16,10 +14,13 @@ int main(){
 	int numerosecreto = 42;
 
 	int chute;
+	int venceu = 0;
+	int tentativas = 0;
 
-	//Esse for é loop para que o jogador tenha só X chances para acertar o número secreto:
-	for(int i = 1; i <=NUMEROS_DE_TENTATIVAS; i++){
-		printf("Sua %d tentativa de %d no momento\n", i, NUMEROS_DE_TENTATIVAS);
+
+	//Esse while é loop para que o jogador não tenha limites de chances até acertar o número secreto:
+	while(venceu == 0){
+		printf("Tentativa Nº %d no momento\n", tentativas + 1);
 		printf("Tu sabe qual é o número que o jogo pensou?");
 		scanf("%d", &chute);
 
@@ -27,7 +28,6 @@ int main(){
 
 		if (chute < 0){
 			printf("Amigue, tudo não pode chutar com números negativos.\n");
-			i--;
 			continue;
 		}
 
@@ -46,8 +46,10 @@ int main(){
 
 		if(acertou){
 			printf("Parabéns!! Tu acertou o número que o jogo pensou!\n");
+			printf("Adivinhou com %d tentativas!\n", tentativas+1);
 			printf("Quer jogar mais uma vez?\n");
-			break;
+			venceu = 1;
+			
 		}
 		else{
 			printf("Hmmm... Você errou o número que jogo pensou...\n");
@@ -61,6 +63,7 @@ int main(){
 			else if (chutemenor){
 				printf("Dica: o seu chute foi menor que o número pensado pelo jogo.\n");
 			}		
+			tentativas = tentativas+1;
 		}
 	}
 	printf("Fim de jogo!!\n");
