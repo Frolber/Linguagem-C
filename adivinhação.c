@@ -14,13 +14,14 @@ int main(){
 	int numerosecreto = 42;
 
 	int chute;
-	int venceu = 0;
-	int tentativas = 0;
+	int tentativas = 1;
+
+	double pontuacao = 1000;
 
 
 	//Esse while é loop para que o jogador não tenha limites de chances até acertar o número secreto:
-	while(venceu == 0){
-		printf("Tentativa Nº %d no momento\n", tentativas + 1);
+	while(1){
+		printf("Tentativa Nº %d no momento\n", tentativas);
 		printf("Tu sabe qual é o número que o jogo pensou?");
 		scanf("%d", &chute);
 
@@ -46,9 +47,9 @@ int main(){
 
 		if(acertou){
 			printf("Parabéns!! Tu acertou o número que o jogo pensou!\n");
-			printf("Adivinhou com %d tentativas!\n", tentativas+1);
+			printf("Adivinhou com %d tentativas!\n", tentativas);
 			printf("Quer jogar mais uma vez?\n");
-			venceu = 1;
+			break;
 			
 		}
 		else{
@@ -63,10 +64,14 @@ int main(){
 			else if (chutemenor){
 				printf("Dica: o seu chute foi menor que o número pensado pelo jogo.\n");
 			}		
-			tentativas = tentativas+1;
+			tentativas++;
+
+			double pontosperdidos = (chute - numerosecreto) / 2;
+			pontuacao = pontuacao - pontosperdidos;
 		}
 	}
 	printf("Fim de jogo!!\n");
+	printf("Pontuação desse jogo foi de %f\n", pontuacao);
 	system("pause");
 }
 
