@@ -44,7 +44,7 @@ int main(){
 		printf("Então tu acha que o número que jogo tem guardado é %d?\n", chute);
 		system("pause");
 		printf("Vou ver ser é verdade...\n");
-		sleep(2);
+		sleep(1);
 
 		//Verificação se o jogador adivinhou o número secreto:
 
