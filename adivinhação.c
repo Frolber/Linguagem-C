@@ -25,9 +25,35 @@ int main(){
 
 	double pontuacao = 1000;
 
+	//Estamos adicionando os níveis de dificuldades por quantidade limitada de tentativas:
+	int nivel;
+	int numerotentativas;
+	printf("Qual o nível de dificuldade do jogo que tu prefere?\n");
+	printf("(1) - Fácil, (2) - médio, (3) - Difícil.\n");
+	printf("digite em número abaixo a dificuldade:\n");
+	scanf("%d", &nivel);
 
-	//Esse while é loop para que o jogador não tenha limites de chances até acertar o número secreto:
-	while(1){
+	switch(nivel){
+		case 1:
+			numerotentativas = 20;
+			break;
+
+		case 2:
+			numerotentativas = 10;
+			break;
+
+		case 3:
+			numerotentativas = 6;
+			break;
+
+		default:
+			numerotentativas = 3;
+			break;
+	}
+
+
+	//Esse for é loop para que o jogador tenha X de chances para acertar o número secreto:
+	for(int i = 1; i <=numerotentativas; i++){
 		printf("Tentativa Nº %d no momento\n", tentativas);
 		printf("Tu sabe qual é o número que o jogo pensou?");
 		scanf("%d", &chute);
