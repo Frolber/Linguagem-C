@@ -10,4 +10,4 @@
 
 ### Parte mais significativa da programação:
 
-- Entender o while e o for como formas do looping foi bem interessante de entender e utilidade que ela tem para tudo.
+- Entender o while(indicado para quando não sabe ao certo quando precisa terminar) e o for(tem um limite de loop a ser feito) como formas do looping foi bem interessante de entender e utilidade que ela tem para tudo.
